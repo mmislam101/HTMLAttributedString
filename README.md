@@ -1,9 +1,15 @@
 HTMLAttributedString
 ====================
 
-Don't mess with NSRanges anymore; Mark up your strings for quick attributes:
+Don't mess with NSRanges anymore; Mark up your strings for quick attributes.
+
+Imagine what you can now do with push notifications by **bolding** or *italicizing* words in the payload! Or imagine how you can create stylized descriptions and instructions on your `UILabel`s!
 
 ![HTMLAttributedString Example](http://mmislam101.github.io/images/HTMLAttributedString_scrnshot01.png)
+
+HTMLAttributedString uses the power of iOS 7.0's `initWithData:options:documentAttributes:error:` to bring you the power of HTML and CSS into your everyday iOS development needs.
+
+If you want to do quick styling on any labels and text that shows up on your iOS app, or be able to pass styling through internet to your application, you can use HTMLAttributedString class to accomplish the deed.
 
 ###Setup
 Init with: 
@@ -34,3 +40,4 @@ And you can change the body font with the property:
 ```smalltalk
 @property (nonatomic, strong) UIFont *bodyFont;
 ```
+##That's it! Enjoy!
