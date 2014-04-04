@@ -13,24 +13,35 @@
 @synthesize
 cssAttributes = _cssAttributes;
 
-- (id)initWithText:(NSString *)text withFont:(UIFont *)font
+- (id)initWithText:(NSString *)text withBodyFont:(UIFont *)font
 {
 	if (!(self = [super init]))
         return self;
 
 	_cssAttributes	= [[NSMutableArray alloc] init];
 	_text			= text;
+	_bodyFont		= font;
+	_bodyFontCss	= [NSString stringWithFormat:@"body{font-family : '%@'; font-size : %fpx;}", font.familyName, font.pointSize];
 
-	[self addCssAttribute:[NSString stringWithFormat:@"body{font-family : '%@'; font-size : %fpx;}", font.familyName, font.pointSize]];
+	[self addCssAttribute:_bodyFontCss];
 
     return self;
 }
 
-+ (NSAttributedString *)stringWithText:(NSString *)text andFont:(UIFont *)font
++ (NSAttributedString *)stringWithText:(NSString *)text andBodyFont:(UIFont *)font
 {
-	HTMLAttributedString *htmlAttributedString = [[HTMLAttributedString alloc] initWithText:text withFont:font];
+	HTMLAttributedString *htmlAttributedString = [[HTMLAttributedString alloc] initWithText:text withBodyFont:font];
 
-	return htmlAttributedString.text;
+	return htmlAttributedString.attributedText;
+}
+
+- (void)setBodyFont:(UIFont *)bodyFont
+{
+	_bodyFont					= bodyFont;
+	NSString *newBodyFontCss	= [NSString stringWithFormat:@"body{font-family : '%@'; font-size : %fpx;}", bodyFont.familyName, bodyFont.pointSize];
+	[_cssAttributes replaceObjectAtIndex:[_cssAttributes indexOfObject:_bodyFontCss] withObject:newBodyFontCss];
+	_bodyFontCss	= newBodyFontCss;
+
 }
 
 - (void)addCssAttribute:(NSString *)cssAttribute
@@ -48,7 +59,7 @@ cssAttributes = _cssAttributes;
 	[_cssAttributes removeAllObjects];
 }
 
-- (NSAttributedString *)text
+- (NSAttributedString *)attributedText
 {
 	__block NSString *css		= @"<style>";
 

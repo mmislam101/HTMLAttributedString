@@ -11,14 +11,16 @@
 @interface HTMLAttributedString : NSObject
 {
 	NSMutableArray *_cssAttributes;
-	NSString *_text;
+	NSString *_bodyFontCss;
 }
 
-- (id)initWithText:(NSString *)text withFont:(UIFont *)font;
-+ (NSAttributedString *)stringWithText:(NSString *)text andFont:(UIFont *)font;
+- (id)initWithText:(NSString *)text withBodyFont:(UIFont *)font;
++ (NSAttributedString *)stringWithText:(NSString *)text andBodyFont:(UIFont *)font;
 
 @property (nonatomic, readonly) NSArray *cssAttributes;
-@property (nonatomic, readonly) NSAttributedString *text;
+@property (nonatomic, readonly) NSAttributedString *attributedText;
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, strong) UIFont *bodyFont;
 
 - (void)addCssAttribute:(NSString *)cssAttribute;
 - (void)removeCssAttribute:(NSString *)cssAttribute;
