@@ -9,7 +9,7 @@ Don't mess with NSRanges anymore; Mark up your strings for quick attributes:
 Init with: 
 ```smalltalk
 HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithText:@"<h1>Header</h1> Test string." withBodyFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
-NSAttributedText *attributedString = string.attributedTex
+NSAttributedText *attributedString = string.attributedText;
 ```
 But you can also get a quick string by:
 ```smalltalk
