@@ -8,11 +8,12 @@ Don't mess with NSRanges anymore; Mark up your strings for quick attributes:
 ###Setup
 Init with: 
 ```smalltalk
-HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithText:@"<h1>Header</h1> Test string." withFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
+HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithText:@"<h1>Header</h1> Test string." withBodyFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
+NSAttributedText *attributedString = string.attributedTex
 ```
 But you can also get a quick string by:
 ```smalltalk
-[HTMLAttributedString stringWithText:@"<h2>Quick Header</h2> Isn't that simple?" size:12.0]];
+NSAttributedText *attributedString = [HTMLAttributedString stringWithText:@"<h2>Quick Header</h2> Isn't that simple?" andBodyFont:[UIFont fontWithName:@"Helvetica" size:12.0]];
 ```
 
 ###Controls
@@ -29,5 +30,7 @@ HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithText:@"<h1
 [string addCssAttribute:@"h1{font-family : 'Avenir-Roman'; font-size : 24px;}"];
 ```
 
-####Change Body Font
-When you initialize the HTMLAttributedString class, it creates a body css tag which you can edit with
+And you can change the body font with the property:
+```smalltalk
+@property (nonatomic, strong) UIFont *bodyFont;
+```
