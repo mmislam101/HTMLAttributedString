@@ -11,7 +11,8 @@
 
 @interface HSEViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *label;
+@property (nonatomic, weak) IBOutlet UILabel *label1;
+@property (nonatomic, weak) IBOutlet UILabel *label2;
 
 @end
 
@@ -21,10 +22,14 @@
 {
 	[super loadView];
 
-	HTMLAttributedString *string = [[HTMLAttributedString alloc] initWithText:@"<center><h1>THIS</h1></center><p>Is <i>one</i> string from only <b><i>two</b></i> lines of code. <h2>Can you believe it?</h2>" withFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
-	[string addCssAttribute:@"h2{font-family : 'Avenir-Roman'; font-size : 24px;}"];
+	HTMLAttributedString *string1 = [[HTMLAttributedString alloc] initWithText:@"<center><h1>THIS</h1></center><p>Is <i>one</i> string from only <b><i>two</b></i> lines of code. <h2>Can you believe it?</h2>" withFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
+	[string1 addCssAttribute:@"h2{font-family : 'Avenir-Roman'; font-size : 24px;}"];
 
-	self.label.attributedText = string.text;
+	self.label1.attributedText = string1.text;
+
+	HTMLAttributedString *string2 = [[HTMLAttributedString alloc] initWithText:@"<h2>And this</h2> Is <i>one</i> string from only <b><i>one</b></i> line of code. <h3>Can you believe it?</h3>" withFont:[UIFont fontWithName:@"Helvetica" size:12.0]];
+
+	self.label2.attributedText = string2.text;
 }
 
 - (void)viewDidLoad
