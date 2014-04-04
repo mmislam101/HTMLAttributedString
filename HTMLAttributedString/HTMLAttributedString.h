@@ -19,7 +19,7 @@
 
 @property (nonatomic, readonly) NSArray *cssAttributes;
 @property (nonatomic, readonly) NSAttributedString *attributedText;
-@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) UIFont *bodyFont;
 
 - (void)addCssAttribute:(NSString *)cssAttribute;
