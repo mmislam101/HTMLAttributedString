@@ -14,12 +14,12 @@ If you want to do quick styling on any labels and text that shows up on your iOS
 ###Setup
 Init with: 
 ```smalltalk
-HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithText:@"<h1>Header</h1> Test string." withBodyFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
-NSAttributedText *attributedString = string.attributedText;
+HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithHtml:@"<h1>Header</h1> Test string." andBodyFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
+NSAttributedString *attributedString = string.attributedString;
 ```
 But you can also get a quick string by:
 ```smalltalk
-NSAttributedText *attributedString = [HTMLAttributedString stringWithText:@"<h2>Quick Header</h2> Isn't that simple?" andBodyFont:[UIFont fontWithName:@"Helvetica" size:12.0]];
+NSAttributedText *attributedString = [HTMLAttributedString attributedStringWithHtml:@"<h2>Quick Header</h2> Isn't that simple?" andBodyFont:[UIFont fontWithName:@"Helvetica" size:12.0]];
 ```
 
 ###Controls
@@ -27,12 +27,12 @@ You can add CSS rules and remove them or clear them using the following:
 ```smalltalk
 - (void)addCssAttribute:(NSString *)cssAttribute;
 - (void)removeCssAttribute:(NSString *)cssAttribute;
-- (void)clear;
+- (void)clearCssAttributes;
 ```
 
 Example:
 ```smalltalk
-HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithText:@"<h1>Header</h1> Test string." withFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
+HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithHtml:@"<h1>Header</h1> Test string." withFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
 [string addCssAttribute:@"h1{font-family : 'Avenir-Roman'; font-size : 24px;}"];
 ```
 

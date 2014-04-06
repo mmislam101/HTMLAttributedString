@@ -13,13 +13,13 @@
 @synthesize
 cssAttributes = _cssAttributes;
 
-- (id)initWithText:(NSString *)text withBodyFont:(UIFont *)font
+- (id)initWithHtml:(NSString *)html andBodyFont:(UIFont *)font
 {
 	if (!(self = [super init]))
         return self;
 
 	_cssAttributes	= [[NSMutableArray alloc] init];
-	_text			= text;
+	_html			= html;
 	_bodyFont		= font;
 	_bodyFontCss	= [NSString stringWithFormat:@"body{font-family : '%@'; font-size : %fpx;}", font.familyName, font.pointSize];
 
@@ -28,11 +28,11 @@ cssAttributes = _cssAttributes;
     return self;
 }
 
-+ (NSAttributedString *)stringWithText:(NSString *)text andBodyFont:(UIFont *)font
++ (NSAttributedString *)attributedStringWithHtml:(NSString *)html andBodyFont:(UIFont *)font
 {
-	HTMLAttributedString *htmlAttributedString = [[HTMLAttributedString alloc] initWithText:text withBodyFont:font];
+	HTMLAttributedString *htmlAttributedString = [[HTMLAttributedString alloc] initWithHtml:html andBodyFont:font];
 
-	return htmlAttributedString.attributedText;
+	return htmlAttributedString.attributedString;
 }
 
 - (void)setBodyFont:(UIFont *)bodyFont
@@ -54,12 +54,12 @@ cssAttributes = _cssAttributes;
 	[_cssAttributes removeObject:cssAttribute];
 }
 
-- (void)clear
+- (void)clearCssAttributes
 {
 	[_cssAttributes removeAllObjects];
 }
 
-- (NSAttributedString *)attributedText
+- (NSAttributedString *)attributedString
 {
 	__block NSString *css		= @"<style>";
 
@@ -68,7 +68,7 @@ cssAttributes = _cssAttributes;
 	}];
 
 	css							= [css stringByAppendingString:@"</style>"];
-	NSString *htmlBody			= [_text stringByAppendingString:css];
+	NSString *htmlBody			= [_html stringByAppendingString:css];
 
 	NSStringEncoding encoding	= NSUnicodeStringEncoding;
 	NSData *data				= [htmlBody dataUsingEncoding:encoding];

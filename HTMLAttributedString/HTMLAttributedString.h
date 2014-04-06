@@ -14,16 +14,16 @@
 	NSString *_bodyFontCss;
 }
 
-- (id)initWithText:(NSString *)text withBodyFont:(UIFont *)font;
-+ (NSAttributedString *)stringWithText:(NSString *)text andBodyFont:(UIFont *)font;
+- (id)initWithHtml:(NSString *)html andBodyFont:(UIFont *)font;
++ (NSAttributedString *)attributedStringWithHtml:(NSString *)html andBodyFont:(UIFont *)font;
 
 @property (nonatomic, readonly) NSArray *cssAttributes;
-@property (nonatomic, readonly) NSAttributedString *attributedText;
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic, readonly) NSAttributedString *attributedString;
+@property (nonatomic, strong) NSString *html;
 @property (nonatomic, strong) UIFont *bodyFont;
 
 - (void)addCssAttribute:(NSString *)cssAttribute;
 - (void)removeCssAttribute:(NSString *)cssAttribute;
-- (void)clear;
+- (void)clearCssAttributes;
 
 @end

@@ -23,6 +23,7 @@
 		B653903918EA82D000042DA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B653903718EA82D000042DA0 /* InfoPlist.strings */; };
 		B653903B18EA82D000042DA0 /* HTMLAttributedStringExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B653903A18EA82D000042DA0 /* HTMLAttributedStringExampleTests.m */; };
 		B653904718EA832D00042DA0 /* HTMLAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = B653904618EA832D00042DA0 /* HTMLAttributedString.m */; };
+		B653905318F10B0200042DA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B653905218F10B0200042DA0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		B653903A18EA82D000042DA0 /* HTMLAttributedStringExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLAttributedStringExampleTests.m; sourceTree = "<group>"; };
 		B653904518EA832D00042DA0 /* HTMLAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLAttributedString.h; sourceTree = "<group>"; };
 		B653904618EA832D00042DA0 /* HTMLAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLAttributedString.m; sourceTree = "<group>"; };
+		B653905218F10B0200042DA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B653904418EA830A00042DA0 /* HTMLAttributedString */,
+				B653905218F10B0200042DA0 /* README.md */,
 				B653901B18EA82CF00042DA0 /* HSEAppDelegate.h */,
 				B653901C18EA82CF00042DA0 /* HSEAppDelegate.m */,
 				B653901E18EA82CF00042DA0 /* Main_iPhone.storyboard */,
@@ -248,6 +251,7 @@
 			files = (
 				B653902318EA82CF00042DA0 /* Main_iPad.storyboard in Resources */,
 				B653902818EA82CF00042DA0 /* Images.xcassets in Resources */,
+				B653905318F10B0200042DA0 /* README.md in Resources */,
 				B653902018EA82CF00042DA0 /* Main_iPhone.storyboard in Resources */,
 				B653901718EA82CF00042DA0 /* InfoPlist.strings in Resources */,
 			);
@@ -486,6 +490,7 @@
 				B653904018EA82D000042DA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B653904118EA82D000042DA0 /* Build configuration list for PBXNativeTarget "HTMLAttributedStringExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +499,7 @@
 				B653904318EA82D000042DA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
