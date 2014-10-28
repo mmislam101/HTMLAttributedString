@@ -11,6 +11,11 @@ HTMLAttributedString uses the power of iOS 7.0's `initWithData:options:documentA
 
 If you want to do quick styling on any labels and text that shows up on your iOS app, or be able to pass styling through internet to your application, you can use HTMLAttributedString class to accomplish the deed.
 
+###HTMLAttributedString In Action
+
+Used in the following amazing app that you should totally download:
+- [type-WISE](https://itunes.apple.com/us/app/type-wise-play-with-typefaces/id827605748)
+
 ###Setup
 Init with: 
 ```smalltalk
