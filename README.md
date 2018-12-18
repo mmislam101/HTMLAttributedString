@@ -11,12 +11,12 @@ HTMLAttributedString uses the power of iOS 7.0's `initWithData:options:documentA
 
 If you want to do quick styling on any labels and text that shows up on your iOS app, or be able to pass styling through internet to your application, you can use HTMLAttributedString class to accomplish the deed.
 
-###HTMLAttributedString In Action
+### HTMLAttributedString In Action
 
 Used in the following amazing app that you should totally download:
 - [type-WISE](https://itunes.apple.com/us/app/type-wise-play-with-typefaces/id827605748)
 
-###Setup
+### Setup
 Init with: 
 ```smalltalk
 HTMLAttributedString *string  = [[HTMLAttributedString alloc] initWithHtml:@"<h1>Header</h1> Test string." andBodyFont:[UIFont fontWithName:@"Helvetica" size:18.0]];
@@ -27,7 +27,7 @@ But you can also get a quick string by:
 NSAttributedText *attributedString = [HTMLAttributedString attributedStringWithHtml:@"<h2>Quick Header</h2> Isn't that simple?" andBodyFont:[UIFont fontWithName:@"Helvetica" size:12.0]];
 ```
 
-###Controls
+### Controls
 You can add CSS rules and remove them or clear them using the following:
 ```smalltalk
 - (void)addCssAttribute:(NSString *)cssAttribute;
@@ -45,4 +45,4 @@ And you can change the body font with the property:
 ```smalltalk
 @property (nonatomic, strong) UIFont *bodyFont;
 ```
-##That's it! Enjoy!
+## That's it! Enjoy!
